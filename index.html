@@ -68,16 +68,18 @@
         .breakdown-row {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             font-size: 14px;
             color: #555;
+            border-bottom: 1px solid #f9f9f9;
+            padding-bottom: 8px;
         }
         .total-row {
             display: flex;
             justify-content: space-between;
             margin-top: 15px;
             padding-top: 10px;
-            border-top: 1px dashed #ccc;
+            border-top: 2px dashed #ccc;
             font-size: 18px;
             font-weight: bold;
             color: #2c3e50;
@@ -140,8 +142,8 @@
 
             htmlContent += `
                 <div class="breakdown-row">
-                    <span>${tier.label} (${formatNumber(usage)} kWh @ ${tier.rate}):</span>
-                    <span>${formatNumber(cost)} IQD</span>
+                    <span>${tier.label}<br><small>${formatNumber(usage)} kWh × ${tier.rate} IQD</small></span>
+                    <span style="font-weight: bold; align-self: center;">${formatNumber(cost)} IQD</span>
                 </div>
             `;
             remaining -= usage;
